@@ -58,7 +58,7 @@ func (TestMilter) Body(m *milter.Modifier) (milter.Response, error) {
 }
 
 func RunServer(socket net.Listener) {
-
+	log.Println("milter RunServer...")
 	if err := milter.RunServer(socket,
 		func() (milter.Milter, milter.OptAction, milter.OptProtocol) {
 			return &TestMilter{},
