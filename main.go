@@ -83,7 +83,7 @@ func main() {
 		// ignore os.Remove errors
 		_ = os.Remove(address)
 	}
-	socket, err := net.Listen(protocol, address)
+	socket, err := net.Listen("tcp", ":9001")
 	if err != nil {
 		log.Fatal(err)
 	}

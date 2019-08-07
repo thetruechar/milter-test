@@ -7,3 +7,5 @@ services:
     command: ["milter-test"]
     ports:
       - "127.0.0.1:9001:9001"
+    volumes:
+      - /opt/dep/lib64:/lib64
