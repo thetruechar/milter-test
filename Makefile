@@ -31,7 +31,7 @@ gen: pb code
 
 build:
 	kubectl config use-context develop-admin@develop
-	go build
+	go build -a -installsuffix cgo ${FLAGS}
 
 image: build
 	docker build -t registry.yixindev.net:5000/milter-test:${COMMIT} .
