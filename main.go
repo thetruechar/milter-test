@@ -10,6 +10,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"net"
 	"strconv"
 )
@@ -21,6 +22,7 @@ func main() {
 	if server == nil {
 		panic("couldn't start listening: " + err.Error())
 	}
+	log.Println("listening...")
 	conns := clientConns(server)
 	for {
 		go handleConn(<-conns)
