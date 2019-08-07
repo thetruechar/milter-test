@@ -25,10 +25,10 @@ RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 
 # Copy the Pre-built binary file from the previous stage
-COPY --from=builder /app/milter-test .
+COPY --from=builder /app/milter-test /usr/local/bin
 
 # Expose port 8080 to the outside world
-EXPOSE 8080
+EXPOSE 9001
 
 # Command to run the executable
 CMD ["./milter-test"] 

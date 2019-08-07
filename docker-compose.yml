@@ -1,0 +1,9 @@
+version: "2"
+services:
+  local:
+    restart: always
+    image: registry.yixindev.net:5000/milter-test:latest
+    container_name: milter-test
+    command: ["milter-test"]
+    ports:
+      - "127.0.0.1:9001:9001"
